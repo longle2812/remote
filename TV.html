@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let Remote = function (tv) {
+        this.tv = tv;
+    }
+    let Tv = function () {
+        this.currentChannel = 1;
+        this.currentVolume = 10;
+        this.status = "on";
+        this.changeChannel = function () {
+            this.currentChannel += 1;
+        }
+        this.changeVolume = function () {
+            this.currentVolume += 2;
+        }
+        this.changeStatus = function () {
+            if (this.status == "on") {
+                this.status = "off";
+            }
+            else this.status = "on";
+        }
+    }
+    let tv1 = new Tv();
+    let remote = new Remote(tv1);
+    console.log(remote.tv.currentVolume);
+    remote.tv.changeVolume();
+    console.log(remote.tv.currentVolume);
+</script>
+</html>
